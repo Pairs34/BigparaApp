@@ -1,0 +1,35 @@
+﻿var dolarTitle = document.DocumentNode.SelectSingleNode(dolarTitleXpath).InnerText;
+            var dolarAlis = document.DocumentNode.SelectSingleNode(dolarAlisXpath).InnerText;
+            var dolarSatis = document.DocumentNode.SelectSingleNode(dolarSatisXpath).InnerText;
+            var euroTitle = document.DocumentNode.SelectSingleNode(euroTitleXpath).InnerText;
+            var euroAlis = document.DocumentNode.SelectSingleNode(euroAlisXpath).InnerText;
+            var euroSatis = document.DocumentNode.SelectSingleNode(euroSatisXpath).InnerText;
+            var sterlinTitle = document.DocumentNode.SelectSingleNode(sterlinTitleXpath).InnerText;
+            var sterlinAlis = document.DocumentNode.SelectSingleNode(sterlinAlisXpath).InnerText;
+            var sterlinSatis = document.DocumentNode.SelectSingleNode(sterlinSatisXpath).InnerText;
+
+            dovizler.Add(new Bigpara()
+            {
+                alisFiyati = dolarAlis,
+                satisFiyati = dolarSatis,
+                dovizTuru = dolarTitle
+            });
+            
+            dovizler.Add(new Bigpara()
+            {
+                alisFiyati = euroAlis,
+                satisFiyati = euroSatis,
+                dovizTuru = euroTitle
+            });
+            
+            dovizler.Add(new Bigpara()
+            {
+                alisFiyati = sterlinAlis,
+                satisFiyati = sterlinSatis,
+                dovizTuru = sterlinTitle
+            });
+
+            foreach (var bigpara in dovizler)
+            {
+                Console.WriteLine($"Doviz Türü {bigpara.dovizTuru} , Alış Fiyatı = {bigpara.alisFiyati} , Satış Fiyatı = {bigpara.satisFiyati}");
+            }
